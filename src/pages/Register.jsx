@@ -49,90 +49,102 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center px-4">
-      <div className="w-full max-w-md bg-base-100 rounded-3xl shadow-xl p-8 md:p-10 border border-base-300/50">
-        {/* Heading */}
-        <div className="text-center mb-6">
-          <h2 className="text-3xl font-bold">Create Account</h2>
-          <p className="text-sm text-base-content/70 mt-1">
-            Join us and start participating today.
+    <div className="max-w-md mx-auto mt-10">
+      <div className="card bg-base-100 shadow-xl rounded-2xl">
+        <div className="card-body space-y-6">
+          {/* Heading */}
+          <div className="text-center">
+            <h2 className="text-2xl font-bold">Create Account</h2>
+            <p className="text-sm text-base-content/70 mt-1">
+              Join us and start participating today.
+            </p>
+          </div>
+
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Name */}
+            <div className="form-control">
+              <label className="label pb-1">
+                <span className="label-text text-sm font-medium">
+                  Full Name
+                </span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="John Doe"
+                className="input input-bordered w-full h-12 rounded-xl"
+                required
+              />
+            </div>
+
+            {/* Email */}
+            <div className="form-control">
+              <label className="label pb-1">
+                <span className="label-text text-sm font-medium">Email</span>
+              </label>
+              <input
+                type="email"
+                name="email"
+                placeholder="example@email.com"
+                className="input input-bordered w-full h-12 rounded-xl"
+                required
+              />
+            </div>
+
+            {/* Photo URL */}
+            <div className="form-control">
+              <label className="label pb-1">
+                <span className="label-text text-sm font-medium">
+                  Photo URL
+                </span>
+              </label>
+              <input
+                type="url"
+                name="photoURL"
+                placeholder="https://your-photo-link.com"
+                className="input input-bordered w-full h-12 rounded-xl"
+                required
+              />
+            </div>
+
+            {/* Password */}
+            <div className="form-control">
+              <label className="label pb-1">
+                <span className="label-text text-sm font-medium">Password</span>
+              </label>
+              <input
+                type="password"
+                name="password"
+                placeholder="••••••••"
+                className="input input-bordered w-full h-12 rounded-xl"
+                required
+              />
+              <p className="mt-1 text-[11px] text-base-content/60">
+                Must be at least 6 characters, include one uppercase and one
+                lowercase letter.
+              </p>
+            </div>
+
+            {/* Error message */}
+            {error && (
+              <p className="text-red-500 text-sm text-center">{error}</p>
+            )}
+
+            {/* Submit button */}
+            <button className="btn btn-primary w-full h-12 rounded-xl text-base font-semibold mt-2">
+              Create Account
+            </button>
+          </form>
+
+          {/* Bottom link */}
+          <p className="text-sm text-center pt-2">
+            Already have an account?{" "}
+            <Link to="/login" className="link link-primary font-medium">
+              Login
+            </Link>
           </p>
         </div>
-
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-5">
-          {/* Name */}
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text font-medium">Full Name</span>
-            </label>
-            <input
-              type="text"
-              name="name"
-              placeholder="John Doe"
-              className="input input-bordered rounded-xl h-12"
-              required
-            />
-          </div>
-
-          {/* Email */}
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text font-medium">Email</span>
-            </label>
-            <input
-              type="email"
-              name="email"
-              placeholder="example@email.com"
-              className="input input-bordered rounded-xl h-12"
-              required
-            />
-          </div>
-
-          {/* Photo URL */}
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text font-medium">Photo URL</span>
-            </label>
-            <input
-              type="url"
-              name="photoURL"
-              placeholder="https://your-photo-link.com"
-              className="input input-bordered rounded-xl h-12"
-              required
-            />
-          </div>
-
-          {/* Password */}
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text font-medium">Password</span>
-            </label>
-            <input
-              type="password"
-              name="password"
-              placeholder="••••••••"
-              className="input input-bordered rounded-xl h-12"
-              required
-            />
-          </div>
-
-          {/* Error message */}
-          {error && <p className="text-red-500 text-sm text-center">{error}</p>}
-
-          {/* Submit button */}
-          <button className="btn btn-primary w-full h-12 rounded-xl text-base font-semibold mt-2">
-            Create Account
-          </button>
-        </form>
-
-        {/* Bottom link */}
-        <p className="text-sm text-center mt-6">
-          Already have an account?{" "}
-          <Link to="/login" className="link link-primary font-medium">
-            Login
-          </Link>
-        </p>
       </div>
     </div>
   );
