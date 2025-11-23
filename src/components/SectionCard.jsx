@@ -9,7 +9,7 @@ const SectionCard = ({
     <div className="group relative overflow-hidden rounded-2xl border bg-base-100/80 shadow-sm hover:shadow-lg transition-shadow duration-200">
       {/* Accent bar */}
       <div
-        className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-${accent} to-${accent}/60`}
+        className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r from-${accent} to-${accent}/60`}
       />
 
       <div className="p-5 md:p-6 space-y-3">
