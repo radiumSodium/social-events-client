@@ -1,6 +1,7 @@
 # Social Events Platform | FRONTEND
 
 #### Image preview
+`live link`: https://social-events-platform-1fe94.web.app/upcoming-events
 <img src="src/assets/cover.png">
 
 #### Tech Stack
